@@ -1,13 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2rrcc82jvx4k"]
+[gd_scene load_steps=9 format=3 uid="uid://b2rrcc82jvx4k"]
 
 [ext_resource type="Script" uid="uid://clvpoxthcdpcn" path="res://mundo_2.gd" id="1_jcb7u"]
 [ext_resource type="Script" uid="uid://bwvkvnjbkl567" path="res://jugador.gd" id="1_q0qo4"]
 [ext_resource type="Texture2D" uid="uid://m2teokl3kd8n" path="res://carretera.jpg" id="1_v7ikv"]
 [ext_resource type="Script" uid="uid://but7sos2phn5q" path="res://parallax_background.gd" id="1_vhn5n"]
-[ext_resource type="Texture2D" uid="uid://2ifdffskyuqy" path="res://icon.svg" id="2_v7ikv"]
+[ext_resource type="Texture2D" uid="uid://q1ndqnxk5v6a" path="res://bus.png" id="5_jcb7u"]
+[ext_resource type="AudioStream" uid="uid://dchksq8uu081i" path="res://marimba.mp3" id="6_1s624"]
+[ext_resource type="AudioStream" uid="uid://dnv4m61njv6ud" path="res://impact.mp3" id="7_54eo1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhn5n"]
-size = Vector2(130.96875, 131.125)
+size = Vector2(73, 158.5625)
 
 [node name="Mundo" type="Node2D"]
 script = ExtResource("1_jcb7u")
@@ -19,6 +21,7 @@ script = ExtResource("1_vhn5n")
 motion_mirroring = Vector2(0, 1000)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(2, 4)
 texture = ExtResource("1_v7ikv")
 centered = false
 
@@ -26,11 +29,12 @@ centered = false
 script = ExtResource("1_q0qo4")
 
 [node name="Sprite2D" type="Sprite2D" parent="Jugador"]
-position = Vector2(518, 322)
-texture = ExtResource("2_v7ikv")
+position = Vector2(290.00003, 792)
+scale = Vector2(0.4345, 0.47615612)
+texture = ExtResource("5_jcb7u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jugador"]
-position = Vector2(515, 321.4375)
+position = Vector2(290.5, 793.71875)
 shape = SubResource("RectangleShape2D_vhn5n")
 
 [node name="Timer" type="Timer" parent="."]
@@ -54,6 +58,14 @@ offset_top = 425.0
 offset_right = 351.0
 offset_bottom = 456.0
 text = "REINTENTAR"
+
+[node name="MusicaFondo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_1s624")
+autoplay = true
+
+[node name="SonidoChoque" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("7_54eo1")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/RestartButton" to="." method="_on_restart_button_pressed"]
