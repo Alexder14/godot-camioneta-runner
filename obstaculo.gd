@@ -5,12 +5,11 @@ const VELOCIDAD = 300.0
 
 # FUNCIÓN 1: MOVIMIENTO (Lo que ya tenías)
 func _process(delta):
-	position.y += VELOCIDAD * delta
+	# USAMOS VELOCIDAD GLOBAL
+	position.y += Global.velocidad * delta
 	
-	# Borrar si sale de la pantalla
-	if position.y > 800:
+	if position.y > 1100:
 		queue_free()
-
 # FUNCIÓN 2: DETECTAR CHOQUE (¡ESTA FALTABA!)
 # Esta es la que detiene el juego.
 func _on_body_entered(body):

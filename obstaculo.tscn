@@ -4,18 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://b2uilhucyajvr" path="res://bache.png" id="2_phkyr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_phkyr"]
-size = Vector2(101, 113.65625)
+size = Vector2(75.5, 79.5)
 
 [node name="Obstaculo" type="Area2D"]
 script = ExtResource("1_phkyr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(241.2576, 205.55234)
-scale = Vector2(0.35496956, 0.38579068)
+position = Vector2(29, 177)
+scale = Vector2(0.48200002, 0.5)
 texture = ExtResource("2_phkyr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(242, 206)
+position = Vector2(32, 179)
 shape = SubResource("RectangleShape2D_phkyr")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

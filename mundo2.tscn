@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://dnv4m61njv6ud" path="res://impact.mp3" id="7_54eo1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhn5n"]
-size = Vector2(73, 158.5625)
+size = Vector2(95.5, 225.64063)
 
 [node name="Mundo" type="Node2D"]
 script = ExtResource("1_jcb7u")
@@ -21,7 +21,7 @@ script = ExtResource("1_vhn5n")
 motion_mirroring = Vector2(0, 1000)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(2, 4)
+position = Vector2(4, 1)
 texture = ExtResource("1_v7ikv")
 centered = false
 
@@ -29,12 +29,12 @@ centered = false
 script = ExtResource("1_q0qo4")
 
 [node name="Sprite2D" type="Sprite2D" parent="Jugador"]
-position = Vector2(290.00003, 792)
-scale = Vector2(0.4345, 0.47615612)
+position = Vector2(140.99998, 825)
+scale = Vector2(0.65725005, 0.7200781)
 texture = ExtResource("5_jcb7u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jugador"]
-position = Vector2(290.5, 793.71875)
+position = Vector2(140, 821)
 shape = SubResource("RectangleShape2D_vhn5n")
 
 [node name="Timer" type="Timer" parent="."]

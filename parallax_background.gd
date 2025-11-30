@@ -4,5 +4,5 @@ extends ParallaxBackground
 const VELOCIDAD = 300.0
 
 func _process(delta):
-	# Movemos el fondo hacia abajo
-	scroll_offset.y += VELOCIDAD * delta
+	# AHORA USAMOS LA VELOCIDAD DEL GLOBAL
+	scroll_offset.y += Global.velocidad * delta
