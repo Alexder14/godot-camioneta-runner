@@ -14,8 +14,9 @@ func _process(delta):
 # FUNCIÓN 2: DETECTAR CHOQUE (¡ESTA FALTABA!)
 # Esta es la que detiene el juego.
 func _on_body_entered(body):
-	print("ALGO ME TOCÓ: ", body.name) # Chismoso
-	
 	if body.name == "Jugador":
-		print("💥 ¡CHOCASTE! GAME OVER 💥")
-		get_tree().paused = true
+		print("💥 ¡CHOCASTE!")
+		
+		# En lugar de pausar aquí, llamamos al Jefe (Mundo)
+		# get_parent() obtiene el nodo Mundo
+		get_parent().game_over()

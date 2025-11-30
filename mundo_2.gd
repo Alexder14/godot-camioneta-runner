@@ -1,21 +1,38 @@
 extends Node2D
 
-# 1. Cargamos el molde (Ya confirmamos que esta ruta es la correcta)
 var obstaculo_scene = preload("res://obstaculo.tscn")
+var score = 0.0
 
-# 2. Esta función se activa AUTOMÁTICAMENTE cada 1.5 segundos por el Timer
+func _process(delta):
+	# 1. Aumentar el puntaje (simulamos metros recorridos)
+	score += 100 * delta # 100 metros por segundo
+	
+	# 2. Actualizar el texto en pantalla
+	# $CanvasLayer/ScoreLabel busca el nodo automáticamente
+	$CanvasLayer/ScoreLabel.text = "Metros: " + str(int(score))
+
 func _on_timer_timeout():
-	# Crear una copia del obstáculo
-	var nuevo_obstaculo = obstaculo_scene.instantiate()
+	var nuevo = obstaculo_scene.instantiate()
+	nuevo.position = Vector2(randf_range(50, 550), -50)
+	nuevo.z_index = 10
+	add_child(nuevo)
+
+# --- FUNCIÓN NUEVA: GAME OVER ---
+# Esta función la llamará el obstáculo cuando choques
+func game_over():
+	print("💀 MUNDO: Game Over recibido.")
 	
-	# Decidir posición aleatoria en X (carriles)
-	var x_random = randf_range(50, 550)
+	# 1. Mostrar el botón de reinicio
+	$CanvasLayer/RestartButton.visible = true
 	
-	# Ponerlo arriba (-50) para que baje entrando a la pantalla
-	nuevo_obstaculo.position = Vector2(x_random, -50)
+	# 2. Pausar el juego
+	get_tree().paused = true
+
+# --- FUNCIÓN NUEVA: REINICIAR ---
+# Esta función se activará al presionar el botón
+func _on_restart_button_pressed():
+	# 1. Quitar la pausa
+	get_tree().paused = false
 	
-	# Asegurar que se dibuje ENCIMA de la carretera (Z-Index alto)
-	nuevo_obstaculo.z_index = 10
-	
-	# Agregarlo al juego
-	add_child(nuevo_obstaculo)
+	# 2. Recargar la escena actual (F5 automático)
+	get_tree().reload_current_scene()

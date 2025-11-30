@@ -37,4 +37,23 @@ shape = SubResource("RectangleShape2D_vhn5n")
 wait_time = 1.5
 autostart = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+offset_left = 481.0
+offset_top = 10.0
+offset_right = 558.0
+offset_bottom = 33.0
+text = "Metros : 0"
+
+[node name="RestartButton" type="Button" parent="CanvasLayer"]
+process_mode = 3
+visible = false
+offset_left = 246.0
+offset_top = 425.0
+offset_right = 351.0
+offset_bottom = 456.0
+text = "REINTENTAR"
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/RestartButton" to="." method="_on_restart_button_pressed"]
