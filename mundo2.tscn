@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2rrcc82jvx4k"]
+[gd_scene load_steps=7 format=3 uid="uid://b2rrcc82jvx4k"]
 
+[ext_resource type="Script" uid="uid://clvpoxthcdpcn" path="res://mundo_2.gd" id="1_jcb7u"]
 [ext_resource type="Script" uid="uid://bwvkvnjbkl567" path="res://jugador.gd" id="1_q0qo4"]
 [ext_resource type="Texture2D" uid="uid://m2teokl3kd8n" path="res://carretera.jpg" id="1_v7ikv"]
 [ext_resource type="Script" uid="uid://but7sos2phn5q" path="res://parallax_background.gd" id="1_vhn5n"]
@@ -9,6 +10,7 @@
 size = Vector2(139.5, 168)
 
 [node name="Mundo" type="Node2D"]
+script = ExtResource("1_jcb7u")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 script = ExtResource("1_vhn5n")
@@ -30,3 +32,9 @@ texture = ExtResource("2_v7ikv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jugador"]
 position = Vector2(110, 119)
 shape = SubResource("RectangleShape2D_vhn5n")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
