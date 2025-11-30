@@ -1,0 +1,9 @@
+# 1. Lo más importante: Cache de Godot (basura temporal)
+.godot/
+
+# 2. Archivos de traducción binarios (se regeneran solos)
+*.translation
+
+# 3. Basura del sistema operativo (opcional pero bueno tenerlo)
+.DS_Store
+Thumbs.db
