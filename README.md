@@ -9,10 +9,10 @@ Este es un proyecto de aprendizaje de desarrollo de videojuegos utilizando **GDS
 ### 🚀 Estado Actual (MVP)
 - [x] Movimiento del jugador (Izquierda/Derecha).
 - [x] Física básica y colisiones.
-- [ ] Scroll infinito (Efecto Parallax).
-- [ ] Generación aleatoria de obstáculos.
-- [ ] Sistema de puntaje (Metros recorridos).
-- [ ] Integración con Android (APK).
+- [x] Scroll infinito (Efecto Parallax).
+- [x] Generación aleatoria de obstáculos.
+- [x] Sistema de puntaje (Metros recorridos).
+- [x] Integración con Android (APK).
 
 ## 🛠️ Tecnologías
 * **Motor:** [Godot Engine 4.x](https://godotengine.org/)
