@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Camioneta2"
-run/main_scene="uid://b2rrcc82jvx4k"
+run/main_scene="uid://dosxsomp1o7t1"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 

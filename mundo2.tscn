@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://dnv4m61njv6ud" path="res://impact.mp3" id="7_54eo1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhn5n"]
-size = Vector2(95.5, 225.64063)
+size = Vector2(84.75, 202.82031)
 
 [node name="Mundo" type="Node2D"]
 script = ExtResource("1_jcb7u")
@@ -29,12 +29,12 @@ centered = false
 script = ExtResource("1_q0qo4")
 
 [node name="Sprite2D" type="Sprite2D" parent="Jugador"]
-position = Vector2(140.99998, 825)
-scale = Vector2(0.65725005, 0.7200781)
+position = Vector2(124.34375, 804.49023)
+scale = Vector2(0.5906251, 0.638039)
 texture = ExtResource("5_jcb7u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jugador"]
-position = Vector2(140, 821)
+position = Vector2(124.625, 801.58984)
 shape = SubResource("RectangleShape2D_vhn5n")
 
 [node name="Timer" type="Timer" parent="."]
