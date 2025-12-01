@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2rrcc82jvx4k"]
+[gd_scene load_steps=10 format=3 uid="uid://b2rrcc82jvx4k"]
 
 [ext_resource type="Script" uid="uid://clvpoxthcdpcn" path="res://mundo_2.gd" id="1_jcb7u"]
 [ext_resource type="Script" uid="uid://bwvkvnjbkl567" path="res://jugador.gd" id="1_q0qo4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://q1ndqnxk5v6a" path="res://bus.png" id="5_jcb7u"]
 [ext_resource type="AudioStream" uid="uid://dchksq8uu081i" path="res://marimba.mp3" id="6_1s624"]
 [ext_resource type="AudioStream" uid="uid://dnv4m61njv6ud" path="res://impact.mp3" id="7_54eo1"]
+[ext_resource type="Texture2D" uid="uid://2ifdffskyuqy" path="res://icon.svg" id="8_54eo1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhn5n"]
 size = Vector2(84.75, 202.82031)
@@ -66,6 +67,24 @@ autoplay = true
 [node name="SonidoChoque" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("7_54eo1")
+
+[node name="ControlesMovil" type="CanvasLayer" parent="."]
+
+[node name="BotonIzq" type="TouchScreenButton" parent="ControlesMovil"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(38.999996, 884.00006)
+scale = Vector2(1.5703125, 1.9140625)
+texture_normal = ExtResource("8_54eo1")
+action = "ui_left"
+
+[node name="BotonDer" type="TouchScreenButton" parent="ControlesMovil"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(351, 884)
+scale = Vector2(1.5703125, 1.9140625)
+texture_normal = ExtResource("8_54eo1")
+action = "ui_right"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/RestartButton" to="." method="_on_restart_button_pressed"]
